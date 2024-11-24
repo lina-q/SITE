@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Подтверждение заказа
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('about') }}" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Ваше имя</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ order_data.name if order_data.name else '' }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Электронная почта</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{ order_data.email if order_data.email else '' }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Адрес доставки</label>
+        <input type="text" class="form-control" id="address" name="address" value="{{ order_data.address if order_data.address else '' }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Контактный номер</label>
+        <input type="tel" class="form-control" id="phone" name="phone" value="{{ order_data.phone if order_data.phone else '' }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="order_details" class="form-label">Детали заказа</label>
+        <textarea class="form-control" id="order_details" name="order_details" rows="3" required>{{ order_data.order_details if order_data.order_details else '' }}</textarea>
+    </div>
+    <center>
+    <button type="submit" class="btn btn-black-pp">Оформить заказ</button>
+        <style>
+            .btn-black-pp
+            {
+            background-color: black;
+                color: white;
+                border: black;
+            }
+
+        </style>
+        </center>
+</form>
+{% endblock %}

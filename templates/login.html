@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="form-signin">
+    <center>
+
+  <form method="POST" action="{{ url_for('login') }}">
+    <center><h1 class="h3 mb-3 fw-normal">Пожалуйста, войдите в систему</h1></center>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+      <label for="floatingInput">Эл. адрес</label>
+      <div class="invalid-feedback">Это поле обязательно для заполнения</div>
+    </div>
+
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Пароль" required>
+      <label for="floatingPassword">Пароль</label>
+      <div class="invalid-feedback">Это поле обязательно для заполнения</div>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Запомнить меня
+      </label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-black" type="submit">Вход
+      <style>.btn-black {
+    background-color: black; /* Устанавливаем черный цвет фона */
+    color: white; /* Устанавливаем цвет текста на белый для контраста */
+    border: none; /* Убираем границу, если она есть */
+}</style>
+    </button>
+
+  </form>
+    </center>
+
+</main>
+{% endblock %}
