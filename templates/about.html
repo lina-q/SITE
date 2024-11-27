@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Подтверждение заказа
+L-store
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
         <input type="tel" class="form-control" id="phone" name="phone" value="{{ order_data.phone if order_data.phone else '' }}" required>
     </div>
     <div class="mb-3">
-        <label for="order_details" class="form-label">Детали заказа</label>
+        <label for="order_details" class="form-label">Артикул товара, количество</label>
         <textarea class="form-control" id="order_details" name="order_details" rows="3" required>{{ order_data.order_details if order_data.order_details else '' }}</textarea>
     </div>
     <center>
@@ -34,6 +34,7 @@
             background-color: black;
                 color: white;
                 border: black;
+
             }
 
         </style>
